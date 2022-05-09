@@ -1,0 +1,29 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: 'Assembly-API'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:5234/assembly-db
+    username: root
+    password: root
+    initialization-mode: always
+    initialize: true
+    continue-on-error: true
+    plataform: mysql
+    maxActive: 3
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show_sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect 

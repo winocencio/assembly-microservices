@@ -1,0 +1,19 @@
+version: "3"
+services:
+  assembly-db:
+    image: mysql:8
+    container_name: assembly-db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=assembly-db
+    ports: 
+      - 5234:3306
+
+  assembly-api:
+    build: './assembly-api'
+    container_name: assembly-api
+    environment:
+      - PORT=8080
+    ports: 
+      - 8080:8080
