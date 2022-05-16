@@ -1,7 +1,5 @@
 package com.winocencio.assembly.service;
 
-import java.time.LocalDateTime;
-
 import javax.validation.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +22,7 @@ public class VoteService {
 		
 		Session session = sessionService.getById(vote.getSession().getId());
 		
-		if(session.getDateTimeEnd().isBefore(LocalDateTime.now()))
+		if(session.isOver())
 			throw new ValidationException("Session has ended.");
 		
 		if(voteRepository.findBySessionAndAssociateCpf(vote.getSession(),vote.getAssociateCpf()).size() != 0)

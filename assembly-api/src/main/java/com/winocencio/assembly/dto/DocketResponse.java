@@ -6,12 +6,14 @@ import java.util.stream.Collectors;
 import org.springframework.beans.BeanUtils;
 
 import com.winocencio.assembly.model.Docket;
+import com.winocencio.assembly.model.VoteResultEnum;
 
 public class DocketResponse {
 
 	private Integer id;
 	private String name;
 	private String description;
+	private VoteResultEnum sessionResult;
 	
 	public static DocketResponse of(Docket docket) {
 		var dto = new DocketResponse();
@@ -46,4 +48,13 @@ public class DocketResponse {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public VoteResultEnum getSessionResult() {
+		return sessionResult;
+	}
+
+	public void setSessionResult(VoteResultEnum sessionResult) {
+		this.sessionResult = sessionResult;
+	}
+
 }

@@ -21,7 +21,7 @@ public class Vote {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name = "FK_SESSION", nullable = false)
 	private Session session;
 	

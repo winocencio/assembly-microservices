@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import org.springframework.beans.BeanUtils;
 
@@ -26,6 +27,9 @@ public class Docket {
 	
 	@Column(name = "DESCRIPTION", nullable = false)
 	private String description;
+	
+	@OneToOne(mappedBy="docket")
+	private Session session;
 	
 	public Docket() {}
 	
@@ -71,6 +75,13 @@ public class Docket {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public VoteResultEnum getSessionResult() {
+		if(this.session == null)
+			return VoteResultEnum.NOT_STARTED;
+		
+		return session.getVoteResult();
 	}
 	
 }
