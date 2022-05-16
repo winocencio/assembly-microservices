@@ -36,32 +36,36 @@ public class Vote {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public Vote setId(Integer id) {
 		this.id = id;
+		return this;
 	}
 
 	public Session getSession() {
 		return session;
 	}
 
-	public void setSession(Session session) {
+	public Vote setSession(Session session) {
 		this.session = session;
+		return this;
 	}
 
 	public String getAssociateCpf() {
 		return associateCpf;
 	}
 
-	public void setAssociateCpf(String associateCpf) {
+	public Vote setAssociateCpf(String associateCpf) {
 		this.associateCpf = associateCpf;
+		return this;
 	}
 
 	public VoteChoiceEnum getVoteChoice() {
 		return voteChoice;
 	}
 
-	public void setVoteChoice(VoteChoiceEnum voteChoice) {
+	public Vote setVoteChoice(VoteChoiceEnum voteChoice) {
 		this.voteChoice = voteChoice;
+		return this;
 	}
 
 	public static Vote of(VoteRequest voteDto) {

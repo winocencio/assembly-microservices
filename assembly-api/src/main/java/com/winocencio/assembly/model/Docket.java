@@ -57,24 +57,27 @@ public class Docket {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public Docket setId(Integer id) {
 		this.id = id;
+		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public Docket setName(String name) {
 		this.name = name;
+		return this;
 	}
 
 	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public Docket setDescription(String description) {
 		this.description = description;
+		return this;
 	}
 	
 	public VoteResultEnum getSessionResult() {

@@ -46,27 +46,31 @@ public class Session {
 	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public Session setId(Integer id) {
 		this.id = id;
+		return this;
 	}
 	public LocalDateTime getDateTimeStarted() {
 		return dateTimeStarted;
 	}
-	public void setDateTimeStarted(LocalDateTime dateTimeStarted) {
+	public Session setDateTimeStarted(LocalDateTime dateTimeStarted) {
 		this.dateTimeStarted = dateTimeStarted;
+		return this;
 	}
 	public Docket getDocket() {
 		return docket;
 	}
-	public void setDocket(Docket docket) {
+	public Session setDocket(Docket docket) {
 		this.docket = docket;
+		return this;
 	}
 	
 	public Long getMinutesToEnd() {
 		return minutesToEnd;
 	}
-	public void setMinutesToEnd(Long minutesToEnd) {
+	public Session setMinutesToEnd(Long minutesToEnd) {
 		this.minutesToEnd = minutesToEnd;
+		return this;
 	}
 	
 	public LocalDateTime getDateTimeEnd() {
