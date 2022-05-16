@@ -8,12 +8,22 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=assembly-db
     ports: 
-      - 5234:3306
+      - 3306:3306
+    networks:
+      - assembly
 
   assembly-api:
-    build: './assembly-api'
+    image: 'willinocencio/assembly-api'
     container_name: assembly-api
+    restart: on-failure
     environment:
       - PORT=8080
+      - DB_URL=assembly-db
     ports: 
       - 8080:8080
+    networks:
+      - assembly
+
+networks:
+  assembly:
+    driver: bridge

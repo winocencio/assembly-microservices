@@ -10,7 +10,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:5234/assembly-db
+    url: jdbc:mysql://${DB_URL:localhost}:3306/assembly-db
     username: root
     password: root
     initialization-mode: always

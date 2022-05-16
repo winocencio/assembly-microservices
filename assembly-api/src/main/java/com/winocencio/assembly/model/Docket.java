@@ -1,4 +1,4 @@
-package com.winocencio.assembly.modules.docket.model;
+package com.winocencio.assembly.model;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,8 +11,8 @@ import javax.persistence.Id;
 
 import org.springframework.beans.BeanUtils;
 
-import com.winocencio.assembly.modules.docket.dto.DocketRequest;
-import com.winocencio.assembly.modules.docket.dto.DocketResponse;
+import com.winocencio.assembly.dto.DocketRequest;
+import com.winocencio.assembly.dto.DocketResponse;
 
 @Entity
 public class Docket {
@@ -27,6 +27,12 @@ public class Docket {
 	@Column(name = "DESCRIPTION", nullable = false)
 	private String description;
 	
+	public Docket() {}
+	
+	public Docket(Integer id) {
+		this.id = id;
+	}
+
 	public static Docket of(DocketResponse docketDto) {
 		var docket = new Docket();
 		BeanUtils.copyProperties(docketDto, docket);

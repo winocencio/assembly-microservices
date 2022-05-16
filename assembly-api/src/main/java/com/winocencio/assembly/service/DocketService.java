@@ -1,20 +1,21 @@
-package com.winocencio.assembly.modules.docket.service;
+package com.winocencio.assembly.service;
 
 import java.util.List;
+
+import javax.validation.ValidationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.winocencio.assembly.config.handler.ValidationException;
-import com.winocencio.assembly.modules.docket.model.Docket;
-import com.winocencio.assembly.modules.docket.repository.DocketRepository;
+import com.winocencio.assembly.model.Docket;
+import com.winocencio.assembly.repository.DocketRepository;
 
 @Service
 public class DocketService {
 	
 	@Autowired
 	private DocketRepository docketRepository;
-
+	
 	public Docket save(Docket docket) {
 		return docketRepository.save(docket);
 	}

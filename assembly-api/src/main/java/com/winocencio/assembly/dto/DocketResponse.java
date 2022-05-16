@@ -1,11 +1,11 @@
-package com.winocencio.assembly.modules.docket.dto;
+package com.winocencio.assembly.dto;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
 
-import com.winocencio.assembly.modules.docket.model.Docket;
+import com.winocencio.assembly.model.Docket;
 
 public class DocketResponse {
 

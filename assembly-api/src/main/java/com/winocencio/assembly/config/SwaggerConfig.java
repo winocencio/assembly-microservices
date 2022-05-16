@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
           .select()
-          .apis(RequestHandlerSelectors.basePackage("com.winocencio.assembly.modules"))
+          .apis(RequestHandlerSelectors.basePackage("com.winocencio.assembly"))
           .paths(PathSelectors.any())
           .build();
     }
