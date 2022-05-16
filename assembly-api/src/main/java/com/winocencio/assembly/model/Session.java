@@ -73,6 +73,15 @@ public class Session {
 		return this;
 	}
 	
+	public List<Vote> getVotes() {
+		return votes;
+	}
+
+	public Session setVotes(List<Vote> votes) {
+		this.votes = votes;
+		return this;
+	}
+	
 	public LocalDateTime getDateTimeEnd() {
 		return this.getDateTimeStarted().plus(Duration.ofMinutes(this.getMinutesToEnd()));
 	}

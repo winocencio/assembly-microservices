@@ -14,8 +14,8 @@ import com.winocencio.assembly.repository.SessionRepository;
 @Service
 public class SessionService {
 	
-	private static final Long MINUTES_TO_END_NOT_INFORMED = 0L;
-	private static final Long MINUTES_TO_END_DEFAULT = 1L;
+	static final Long MINUTES_TO_END_NOT_INFORMED = 0L;
+	static final Long MINUTES_TO_END_DEFAULT = 1L;
 	
 	@Autowired
 	private SessionRepository sessionRepository;
@@ -47,7 +47,7 @@ public class SessionService {
 		return sessionRepository.save(session);
 	}
 
-	private void formatMinutesToEnd(Session session) {
+	void formatMinutesToEnd(Session session) {
 		if(session.getMinutesToEnd() == null || session.getMinutesToEnd().equals(MINUTES_TO_END_NOT_INFORMED))
 			session.setMinutesToEnd(MINUTES_TO_END_DEFAULT);
 	}

@@ -74,6 +74,15 @@ public class Docket {
 	public String getDescription() {
 		return description;
 	}
+	
+	public Session getSession() {
+		return session;
+	}
+
+	public Docket setSession(Session session) {
+		this.session = session;
+		return this;
+	}
 
 	public Docket setDescription(String description) {
 		this.description = description;
@@ -86,5 +95,4 @@ public class Docket {
 		
 		return session.getVoteResult();
 	}
-	
 }
