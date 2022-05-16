@@ -18,6 +18,9 @@ public class VoteService {
 	@Autowired
 	private SessionService sessionService;
 	
+	@Autowired
+	private AssociateService associateService;
+	
 	public void toVote(Vote vote) {
 		
 		Session session = sessionService.getById(vote.getSession().getId());
@@ -28,7 +31,7 @@ public class VoteService {
 		if(voteRepository.findBySessionAndAssociateCpf(vote.getSession(),vote.getAssociateCpf()).size() != 0)
 			throw new ValidationException("The Associate has already voted in this session.");
 		
-		//CPF ESTÁ PERMITIDO?
+		associateService.validateVotePermission(vote.getAssociateCpf());
 			
 		voteRepository.save(vote);
 	}
